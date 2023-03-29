@@ -11,7 +11,7 @@ print(fact(5))
 print(fact(6))
 print(fact(int(input())))
 
-# 1.2 w
+# 1.2
 
 def maximum(x):
     if x[0]>x[1] and x[0]>x[2]:
