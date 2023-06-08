@@ -40,50 +40,60 @@ Ref = {'degree': 'https://clck.ru/34bXfc',
 async def cmd_handler(message: types.Message):
     await message.answer('Добро пожаловать! Это бот-справочник по математике. Выберите раздел.', reply_markup=kb1)
 
+
 @dp.callback_query_handler(filters.Text(contains='sendAlgebra'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer('Выберите раздел.', reply_markup=kb2)
     await callback_query.answer()
+
 
 @dp.callback_query_handler(filters.Text(contains='sendGeometry'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer('Выберите раздел.', reply_markup=kb3)
     await callback_query.answer()
 
+
 @dp.callback_query_handler(filters.Text(contains='sendTri'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer('Выберите раздел.', reply_markup=kb4)
     await callback_query.answer()
+
 
 @dp.callback_query_handler(filters.Text(contains='sendDegree'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer_photo('https://clck.ru/34bXfc', reply_markup=kb2)
     await callback_query.answer()
 
+
 @dp.callback_query_handler(filters.Text(contains='sendLog'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer_photo('https://clck.ru/34bXgn', reply_markup=kb2)
     await callback_query.answer()
+
 
 @dp.callback_query_handler(filters.Text(contains='sendFsu'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer_photo('https://clck.ru/34bXhC', reply_markup=kb2)
     await callback_query.answer()
 
+
 @dp.callback_query_handler(filters.Text(contains='sendST'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer('Извините, картинка пока не готова...', reply_markup=kb3)
     await callback_query.answer()
+
 
 @dp.callback_query_handler(filters.Text(contains='2'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer_photo('https://clck.ru/34bXkC', reply_markup=kb4)
     await callback_query.answer()
 
+
 @dp.callback_query_handler(filters.Text(contains='sendTable'))
 async def some_callback_handler(callback_query: types.CallbackQuery):
     await callback_query.message.answer_photo('https://clck.ru/34bXmk', reply_markup=kb4)
     await callback_query.answer()
+
 
 @dp.message_handler(commands=['degree'])
 async def cmd_handler(message: types.Message):
@@ -103,6 +113,7 @@ async def cmd_handler(message: types.Message):
 @dp.message_handler(commands=['trigtable'])
 async def cmd_handler(message: types.Message):
     await message.answer_photo(Ref['trigtable'], reply_markup=kb4)
+
 
 @dp.message_handler(commands=['trigcircle'])
 async def cmd_handler(message: types.Message):
